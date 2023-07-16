@@ -46,5 +46,21 @@ function PageTransitions() {
 
 PageTransitions();
 
+// // The following 2 functions i.e. downloadCV and generateUniqueID specifically were create to solve the caching issue, as CV once downloaded on clicking the button was not not getting downloaded again as it gets cache.
+// Solution :- Therefore we change the unique id of the cv everytime, which then downloads the CV everytimeirrespective of whether user has downloaded cv just sometime back or Notification, as unique id name won't have been cached earlier.
+
+function generateUniqueID() {
+  // Generate unique id using timestamp
+  var timestamp = new Date().getTime();
+  var random = Math.floor(Math.random() * 10000);
+  return timestamp + "_" + random;
+}
+function downloadCV() {
+  var link = document.getElementById("download-link");
+  var fileName = "cv_" + generateUniqueID() + ".pdf"; // Generate a unique file name
+  link.setAttribute("href", "staticSAKSHAM THUKRAL CV - VISA.docx.pdf");
+  link.setAttribute("download", fileName);
+}
+
 // Learnings
 //1. this keyword doesn't exists in a arrow functions it only exists in a regular function

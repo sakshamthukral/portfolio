@@ -57,8 +57,8 @@ function generateUniqueID() {
 }
 function downloadCV() {
   var link = document.getElementById("download-link");
-  var fileName = "cv_" + generateUniqueID() + ".pdf"; // Generate a unique file name
-  link.setAttribute("href", "staticSAKSHAM THUKRAL CV - VISA.docx.pdf");
+  var fileName = "sakshamthukralcv_" + generateUniqueID() + ".pdf"; // Generate a unique file name
+  link.setAttribute("href", "static/SAKSHAM THUKRAL CV.pdf");
   link.setAttribute("download", fileName);
 }
 
